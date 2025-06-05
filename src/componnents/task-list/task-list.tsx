@@ -1,16 +1,16 @@
 import type { FC } from "react";
-import type { Task } from "../../types";
+import type { ListTypes, Task } from "../../types";
 
 type TaskListProps = {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
-  isFulfilled: boolean;
+  type: ListTypes;
 };
 
 export const TaskList: FC<TaskListProps> = ({
   tasks,
   setTasks,
-  isFulfilled,
+  type,
 }: TaskListProps) => {
   return <div></div>;
 };

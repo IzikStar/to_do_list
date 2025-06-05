@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import type { Task } from "../types";
+import { ListTypes, type Task } from "../types";
 import { useState } from "react";
 import { TaskList } from "../componnents/task-list";
 
@@ -11,8 +11,8 @@ export const App = () => {
     <div className={styles.body}>
       <header className={styles.header}>To-Do List</header>
       <section>
-        <TaskList tasks={tasks} setTasks={setTasks} isFulfilled={false} />
-        <TaskList tasks={tasks} setTasks={setTasks} isFulfilled={true} />
+        <TaskList tasks={tasks} setTasks={setTasks} type={ListTypes.TODO} />
+        <TaskList tasks={tasks} setTasks={setTasks} type={ListTypes.DONE} />
       </section>
       // modal
     </div>
