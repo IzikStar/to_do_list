@@ -8,13 +8,13 @@ export const App = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   return (
-    <body className={styles.body}>
+    <div className={styles.body}>
       <header className={styles.header}>To-Do List</header>
       <section>
         <TaskList tasks={tasks} setTasks={setTasks} isFulfilled={false} />
         <TaskList tasks={tasks} setTasks={setTasks} isFulfilled={true} />
       </section>
       // modal
-    </body>
+    </div>
   );
 };
