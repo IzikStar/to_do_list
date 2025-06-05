@@ -3,5 +3,5 @@ export type Task = {
   title: string;
   description: string;
   isFulfilled: boolean;
-  createdAt: Date;
+  dueTime: Date;
 };
