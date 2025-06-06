@@ -1,6 +1,6 @@
 import styles from "./App.module.css";
 import { ListTypes } from "../types";
-import { TaskList } from "../componnents";
+import { TaskList } from "../components";
 import { useModal } from "../context";
 
 export const App = () => {

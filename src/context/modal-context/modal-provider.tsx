@@ -19,12 +19,12 @@ export const ModalProvider: FC<{
     setIsModalOpen(true);
   };
   
-  const uprroveCreation = (newTask: Task) => {
+  const approveCreation = (newTask: Task) => {
     addTask(newTask);
     setIsModalOpen(false);
   };
   
-  const uprroveEdit = (newTask: Task) => {
+  const approveEdit = (newTask: Task) => {
     editTask(newTask);
     setCurrentTask(null);
     setIsModalOpen(false);
@@ -37,8 +37,8 @@ export const ModalProvider: FC<{
         currentTask,
         openCreateMode,
         openEditMode,
-        uprroveCreation,
-        uprroveEdit
+        approveCreation,
+        approveEdit
       }}
     >
       {children}

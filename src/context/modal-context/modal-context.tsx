@@ -6,8 +6,8 @@ export interface ModalContextType {
   currentTask: Task | null;
   openCreateMode: () => void;
   openEditMode: (currentTask: Task) => void;
-  uprroveCreation: (newTask: Task) => void;
-  uprroveEdit: (newTask: Task) => void;
+  approveCreation: (newTask: Task) => void;
+  approveEdit: (newTask: Task) => void;
 }
 
 export const ModalContext = createContext<ModalContextType | null>(null);
