@@ -1,7 +1,7 @@
 import styles from "./App.module.css";
 import { ListTypes } from "../types";
-import { TaskList } from "../componnents/task-list";
-import { useModal } from "../context/modal-context";
+import { TaskList } from "../componnents";
+import { useModal } from "../context";
 
 export const App = () => {
   const { isModalOpen } = useModal();
@@ -10,7 +10,7 @@ export const App = () => {
     <div className={styles.body}>
       <header className={styles.header}>To-Do List</header>
 
-      <section>
+      <section className={styles.main}>
         <TaskList type={ListTypes.TODO} />
         <TaskList type={ListTypes.DONE} />
       </section>

@@ -1,0 +1,28 @@
+.header {
+  height: 18%;
+  width: 100%;
+  font-family: "Courier Prime";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 7vh;
+  text-align: center;
+  border-bottom: black 1px solid;
+
+  color: var(--black);
+}
+
+.container {
+  position: relative;
+  width: 40vw;
+  height: 75vh;
+  margin: 1vw;
+  background: var(--white);
+  box-shadow: 0px 4px 48px rgba(117, 155, 170, 0.25);
+  border-radius: 12px;
+}
+
+.icon {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
