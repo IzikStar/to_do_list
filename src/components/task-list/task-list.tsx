@@ -17,15 +17,17 @@ export const TaskList: FC<TaskListProps> = ({ type }: TaskListProps) => {
   const filteredTasks = tasks.filter((task: TaskType) => task.type === type);
 
   const renderTasks = (): ReactElement[] => {
-    return filteredTasks.map((task: TaskType) => <Task task={task} />);
+    return filteredTasks.map((task: TaskType) => (
+      <Task task={task} key={task.id} />
+    ));
   };
 
   return (
     <>
       <div className={styles.container}>
         <div className={styles.header}>{type}</div>
-        
-        {renderTasks()}
+
+        <div className={styles.taskContainer}>{renderTasks()}</div>
 
         {type === ListTypes.TODO && (
           <IconButton
