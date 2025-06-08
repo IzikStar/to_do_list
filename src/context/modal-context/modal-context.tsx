@@ -8,6 +8,7 @@ export interface ModalContextType {
   openEditMode: (currentTask: Task) => void;
   approveCreation: (newTask: Task) => void;
   approveEdit: (newTask: Task) => void;
+  abort: () => void;
 }
 
 export const ModalContext = createContext<ModalContextType | null>(null);

@@ -18,14 +18,19 @@ export const ModalProvider: FC<{
     setCurrentTask(currentTask);
     setIsModalOpen(true);
   };
-  
+
   const approveCreation = (newTask: Task) => {
     addTask(newTask);
     setIsModalOpen(false);
   };
-  
+
   const approveEdit = (newTask: Task) => {
     editTask(newTask);
+    setCurrentTask(null);
+    setIsModalOpen(false);
+  };
+
+  const abort = () => {
     setCurrentTask(null);
     setIsModalOpen(false);
   };
@@ -38,7 +43,8 @@ export const ModalProvider: FC<{
         openCreateMode,
         openEditMode,
         approveCreation,
-        approveEdit
+        approveEdit,
+        abort
       }}
     >
       {children}
