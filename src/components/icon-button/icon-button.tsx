@@ -13,7 +13,7 @@ export const IconButton: FC<IconButtonProps> = ({
   className
 }: IconButtonProps) => {
   return (
-    <button className={className + " " + styles.button} onClick={onClick}>
+    <button className={styles.button + " " + className} onClick={onClick}>
       <img src={iconSrc} />
     </button>
   );
