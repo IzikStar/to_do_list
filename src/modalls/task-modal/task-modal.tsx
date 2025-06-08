@@ -6,9 +6,13 @@ import style from "./task-modal.module.css";
 export const TaskModal: FC = () => {
   const { currentTask, approveCreation, approveEdit, abort } = useModal();
   const { tasks } = useTasks();
-  const [title, setTitle] = useState<Task["title"]>("");
-  const [description, setDescription] = useState<Task["description"]>("");
-  const [dueTime, setDueTime] = useState<Task["dueTime"]>(new Date());
+  const [title, setTitle] = useState<Task["title"]>(currentTask?.title ?? "");
+  const [description, setDescription] = useState<Task["description"]>(
+    currentTask?.description ?? ""
+  );
+  const [dueTime, setDueTime] = useState<Task["dueTime"]>(
+    currentTask?.dueTime ?? new Date()
+  );
 
   const handleTitleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -59,7 +63,7 @@ export const TaskModal: FC = () => {
             placeholder="name"
             defaultValue={currentTask?.title ?? ""}
             onChange={handleTitleChange}
-            />
+          />
           <label className={style.label}>Task description:</label>
           <input
             className={style.input}
@@ -74,10 +78,12 @@ export const TaskModal: FC = () => {
           <label className={style.label}>Task due time:</label>
           <input
             className={style.input}
-            type="date"
+            type="datetime-local"
             id="due-time"
             name="due-time"
-            defaultValue={currentTask?.dueTime.toDateString() ?? new Date().toDateString()}
+            defaultValue={
+              dueTime.toISOString().slice(0, 16)
+            }
             onChange={handleDueTimeChange}
           />
 
