@@ -2,6 +2,7 @@ import styles from "./App.module.css";
 import { ListTypes } from "../types";
 import { TaskList } from "../components";
 import { useModal } from "../context";
+import { TaskModal } from "../modalls";
 
 export const App = () => {
   const { isModalOpen } = useModal();
@@ -15,7 +16,7 @@ export const App = () => {
         <TaskList type={ListTypes.DONE} />
       </section>
 
-      {isModalOpen && <></>}
+      {isModalOpen && <TaskModal />}
     </div>
   );
 };
