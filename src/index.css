@@ -1,8 +1,10 @@
 :root {
   --blueBackground: #040541;
-  --containersWhiteBackground: #FFFFF6;
+  --containersWhiteBackground: #fffff6;
   --textBlackFont: #121111;
   --containersBoxShadow: rgba(117, 155, 170, 0.25);
+  --taskBoxShadow: rgba(183, 178, 164, 0.25);
+  --taskDescriptionBlack: #1E1E1E;
 }
 
 body {
@@ -12,4 +14,3 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
