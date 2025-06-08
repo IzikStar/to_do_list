@@ -1,0 +1,28 @@
+.header {
+  height: 18%;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  border-bottom: black 1px solid;
+
+  color: var(--textBlackFont);
+}
+
+.container {
+  position: relative;
+  width: 40rem;
+  height: 32rem;
+  margin: 0.5rem;
+  background: var(--containersWhiteBackground);
+  box-shadow: 0rem 0.25rem 3rem var(--containersBoxShadow);
+  border-radius: 0.8rem;
+}
+
+.icon {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
