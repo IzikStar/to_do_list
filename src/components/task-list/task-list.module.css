@@ -1,24 +1,24 @@
 .header {
   height: 18%;
   width: 100%;
-  font-family: "Courier Prime";
+  font-family: 'Courier New', Courier, monospace;
   font-style: normal;
   font-weight: 700;
-  font-size: 7vh;
+  font-size: 3rem;
   text-align: center;
   border-bottom: black 1px solid;
 
-  color: var(--black);
+  color: var(--textBlackFont);
 }
 
 .container {
   position: relative;
-  width: 40vw;
-  height: 75vh;
-  margin: 1vw;
-  background: var(--white);
-  box-shadow: 0px 4px 48px rgba(117, 155, 170, 0.25);
-  border-radius: 12px;
+  width: 40rem;
+  height: 32rem;
+  margin: 0.5rem;
+  background: var(--containersWhiteBackground);
+  box-shadow: 0rem 0.25rem 3rem var(--containersBoxShadow);
+  border-radius: 0.8rem;
 }
 
 .icon {

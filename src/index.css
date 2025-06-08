@@ -1,7 +1,8 @@
 :root {
-  --blue: #022343;
-  --white: #f5f7e8;
-  --black: #121111;
+  --blueBackground: #040541;
+  --containersWhiteBackground: #FFFFF6;
+  --textBlackFont: #121111;
+  --containersBoxShadow: rgba(117, 155, 170, 0.25);
 }
 
 body {
