@@ -12,18 +12,20 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
   const { openEditMode } = useModal();
   const { removeTask, changeTaskState } = useTasks();
 
-  const formatedDate: string =
-    task.dueTime.toLocaleString("en-US", {
+  const formatDate = (dateToFormat: Date): string => {
+    const time: string = dateToFormat.toLocaleString("en-US", {
       hour: "numeric",
       minute: "2-digit",
       hour12: true,
-    }) +
-    ", " +
-    task.dueTime.toLocaleString("en-US", {
+    });
+    const date = dateToFormat.toLocaleString("en-US", {
       month: "2-digit",
       day: "2-digit",
       year: "numeric",
     });
+
+    return `${time}, ${date}`;
+  };
 
   return (
     <div className={styles.taskContainer}>
@@ -47,7 +49,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
           </div>
 
           <div className={styles.dueTimeContainer}>
-            <p className={styles.dueTime}>{formatedDate}</p>
+            <p className={styles.dueTime}>{formatDate(task.dueTime)}</p>
           </div>
         </div>
       </div>
@@ -72,6 +74,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
             onClick={() => changeTaskState(task, ListTypes.TODO)}
             className={styles.icon}
           />
+          
         </div>
       )}
     </div>
