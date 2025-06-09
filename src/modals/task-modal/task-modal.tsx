@@ -1,4 +1,4 @@
-import { useState, type FC } from "react";
+import { useState, type FC, type FormEvent } from "react";
 import { useModal, useTasks } from "../../context";
 import { ListTypes, type Task } from "../../types";
 import style from "./task-modal.module.css";
@@ -15,7 +15,9 @@ export const TaskModal: FC = () => {
     currentTask?.dueTime ?? null
   );
 
-  const handleAprrove = () => {
+  const handleAprrove = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     let newTask: Task;
 
     if (currentTask) {
