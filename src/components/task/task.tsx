@@ -18,7 +18,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
       minute: "2-digit",
       hour12: true,
     });
-    const date = dateToFormat.toLocaleString("en-US", {
+    const date: string = dateToFormat.toLocaleString("en-US", {
       month: "2-digit",
       day: "2-digit",
       year: "numeric",
