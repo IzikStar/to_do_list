@@ -1,0 +1,93 @@
+.taskContainer {
+  position: relative;
+  width: 38rem;
+  height: 8rem;
+  margin: auto;
+  margin-top: 1rem;
+  background: white;
+  box-shadow: 0rem 0.25rem 3rem var(--taskBoxShadow);
+  border-radius: 0.8rem;
+}
+
+.rightContainer {
+  min-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.titleContainer {
+  min-width: 60%;
+  height: 25%;
+  display: flex;
+  justify-content: start;
+}
+
+.descriptionContainer {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  justify-content: start;
+}
+
+.dueTimeContainer {
+  width: 60%;
+  height: 20%;
+  display: flex;
+  justify-content: start;
+}
+
+.title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.description {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 50;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin: 0;
+  margin-left: 1rem;
+  color: var(--taskDescriptionBlack);
+}
+
+.dueTime {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin: 0;
+  margin-left: 1rem;
+  color: var(--taskDescriptionBlack);
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.actions {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+

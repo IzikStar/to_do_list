@@ -1,5 +1,5 @@
 .button {
-  background-color: inherit;
+  background-color: transparent;
   border: none;
   transition: 100ms;
   cursor: pointer;

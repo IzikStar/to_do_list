@@ -21,6 +21,12 @@
   border-radius: 0.8rem;
 }
 
+.taskContainer {
+  width: 40rem;
+  height: 80%;
+  overflow-y: auto;
+}
+
 .icon {
   position: absolute;
   bottom: 2%;
