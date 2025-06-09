@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FC } from "react";
+import { useState, type FC } from "react";
 import { useModal, useTasks } from "../../context";
 import { ListTypes, type Task } from "../../types";
 import style from "./task-modal.module.css";
@@ -13,18 +13,6 @@ export const TaskModal: FC = () => {
   const [dueTime, setDueTime] = useState<Task["dueTime"]>(
     currentTask?.dueTime ?? new Date()
   );
-
-  const handleTitleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
-  };
-
-  const handleDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    setDescription(event.target.value);
-  };
-
-  const handleDueTimeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setDueTime(new Date(event.target.value));
-  };
 
   const handleAprrove = () => {
     let newTask: Task;
@@ -62,7 +50,7 @@ export const TaskModal: FC = () => {
             name="title"
             placeholder="name"
             defaultValue={currentTask?.title ?? ""}
-            onChange={handleTitleChange}
+            onChange={(event) => setTitle(event.target.value)}
           />
           <label className={style.label}>Task description:</label>
           <textarea
@@ -71,17 +59,18 @@ export const TaskModal: FC = () => {
             name="description"
             placeholder="description"
             defaultValue={currentTask?.description ?? ""}
-            onChange={handleDescriptionChange}
+            onChange={(event) => setDescription(event.target.value)}
           />
-
           <label className={style.label}>Task due time:</label>
           <input
             className={style.input}
             type="datetime-local"
             id="due-time"
             name="due-time"
-            defaultValue={dueTime.toISOString().slice(0, 16)}
-            onChange={handleDueTimeChange}
+            defaultValue={
+              dueTime.toISOString().slice(0, 16)
+            }
+            onChange={(event) => setDueTime(new Date(event.target.value))}
           />
 
           <button type="submit" className={style.submitButton}>

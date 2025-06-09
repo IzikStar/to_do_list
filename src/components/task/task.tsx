@@ -12,14 +12,6 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
   const { openEditMode } = useModal();
   const { removeTask, changeTaskState } = useTasks();
 
-  const markTaskAsDone = () => {
-    changeTaskState(task, ListTypes.DONE);
-  };
-  
-  const markTaskAsUndone = () => {
-    changeTaskState(task, ListTypes.TODO);
-  };
-
   return (
     <div className={styles.taskContainer}>
       <div className={styles.rightContainer}>
@@ -51,7 +43,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
         <div className={styles.actions}>
           <IconButton
             iconSrc="/src/assets/mark-task-as-done-icon.svg"
-            onClick={markTaskAsDone}
+            onClick={() => changeTaskState(task, ListTypes.DONE)}
             className={styles.icon}
           />
           <IconButton
@@ -64,7 +56,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
         <div className={styles.actions}>
           <IconButton
             iconSrc="/src/assets/mark-task-as-undone-icon.svg"
-            onClick={markTaskAsUndone}
+            onClick={() => changeTaskState(task, ListTypes.TODO)}
             className={styles.icon}
           />
         </div>
