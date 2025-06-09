@@ -2,7 +2,7 @@ import styles from "./App.module.css";
 import { ListTypes } from "../types";
 import { TaskList } from "../components";
 import { useModal } from "../context";
-import { TaskModal } from "../modalls";
+import { TaskModal } from "../modals";
 
 export const App = () => {
   const { isModalOpen } = useModal();

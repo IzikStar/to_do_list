@@ -12,8 +12,8 @@ export const TasksProvider: FC<{
   const removeTask = (taskId: Task["id"]) =>
     setTasks((prev) =>
       prev
-        .filter((task: Task) => task.id !== taskId)
-        .map((task: Task, index: number) => {
+        .filter(({ id }: Task) => id !== taskId)
+        .map((task, index: number) => {
           return { ...task, id: index };
         })
     );
