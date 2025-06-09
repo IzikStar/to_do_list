@@ -1,13 +1,17 @@
 .header {
-  height: 18%;
+  height: 15%;
   width: 100%;
-  font-family: 'Courier New', Courier, monospace;
+
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 3rem;
-  text-align: center;
-  border-bottom: black 1px solid;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  border-bottom: black 1px solid;
   color: var(--textBlackFont);
 }
 
@@ -21,9 +25,9 @@
   border-radius: 0.8rem;
 }
 
-.taskContainer {
+.tasksContainer {
   width: 40rem;
-  height: 80%;
+  height: 70%;
   overflow-y: auto;
 }
 

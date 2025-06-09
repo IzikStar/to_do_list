@@ -27,7 +27,7 @@ export const TaskList: FC<TaskListProps> = ({ type }: TaskListProps) => {
       <div className={styles.container}>
         <div className={styles.header}>{type}</div>
 
-        <div className={styles.taskContainer}>{renderTasks()}</div>
+        <div className={styles.tasksContainer}>{renderTasks()}</div>
 
         {type === ListTypes.TODO && (
           <IconButton

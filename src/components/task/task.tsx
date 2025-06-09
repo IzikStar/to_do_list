@@ -12,6 +12,21 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
   const { openEditMode } = useModal();
   const { removeTask, changeTaskState } = useTasks();
 
+  const formatDate = (dateToFormat: Date): string => {
+    const time: string = dateToFormat.toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+    const date: string = dateToFormat.toLocaleString("en-US", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    });
+
+    return `${time}, ${date}`;
+  };
+
   return (
     <div className={styles.taskContainer}>
       <div className={styles.rightContainer}>
@@ -23,7 +38,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
             {task.type === ListTypes.TODO && (
               <IconButton
                 iconSrc="/src/assets/edit-task-icon.svg"
-                className={styles.icon}
+                className={styles.editIcon}
                 onClick={() => openEditMode(task)}
               />
             )}
@@ -34,7 +49,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
           </div>
 
           <div className={styles.dueTimeContainer}>
-            <p className={styles.dueTime}>{task.dueTime.toLocaleString()}</p>
+            <p className={styles.dueTime}>{formatDate(task.dueTime)}</p>
           </div>
         </div>
       </div>
@@ -59,6 +74,7 @@ export const Task: FC<TaskProps> = ({ task }: TaskProps) => {
             onClick={() => changeTaskState(task, ListTypes.TODO)}
             className={styles.icon}
           />
+          
         </div>
       )}
     </div>
