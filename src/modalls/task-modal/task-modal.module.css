@@ -1,21 +1,24 @@
 .closer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px) saturate(150%);
+  z-index: 1000;
 }
 
 .main {
   background: white;
-  min-width: 400px;
-  max-width: 25vw;
+  width: 35rem;
+  height: 25rem;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 54%;
+  left: 29%;
   transform: translate(-50%, -50%);
-  border: 1px solid var(--black);
-  z-index: 1000;
+  border: 2px solid var(--textBlackFont);
+  z-index: 1100;
+  opacity: 100%;
 }
 
 .form {
@@ -26,13 +29,38 @@
 }
 
 .header {
-    
+  margin-left: 1rem;
 }
 
 .label {
-
+  width: 95%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+  color: var(--taskDescriptionBlack);
 }
 
 .input {
+  width: 95%;
+  height: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
+  border: 1px solid var(--modalInputBorder);
+  border-radius: 0.5rem;
+}
+
+.textarea {
+  height: 5rem;
+}
+
+.submitButton {
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+
+  background: var(--submitButtonBG);
+  border: 1px solid var(--submitButtonBorder);
+  border-radius: 0.5rem;
 }

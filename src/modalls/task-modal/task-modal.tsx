@@ -18,7 +18,7 @@ export const TaskModal: FC = () => {
     setTitle(event.target.value);
   };
 
-  const handleDescriptionChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setDescription(event.target.value);
   };
 
@@ -65,9 +65,8 @@ export const TaskModal: FC = () => {
             onChange={handleTitleChange}
           />
           <label className={style.label}>Task description:</label>
-          <input
-            className={style.input}
-            type="text"
+          <textarea
+            className={style.input + " " + style.textarea}
             id="description"
             name="description"
             placeholder="description"
@@ -81,13 +80,13 @@ export const TaskModal: FC = () => {
             type="datetime-local"
             id="due-time"
             name="due-time"
-            defaultValue={
-              dueTime.toISOString().slice(0, 16)
-            }
+            defaultValue={dueTime.toISOString().slice(0, 16)}
             onChange={handleDueTimeChange}
           />
 
-          <button type="submit">Add</button>
+          <button type="submit" className={style.submitButton}>
+            Add
+          </button>
         </form>
       </div>
     </div>

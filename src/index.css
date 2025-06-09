@@ -4,7 +4,10 @@
   --textBlackFont: #121111;
   --containersBoxShadow: rgba(117, 155, 170, 0.25);
   --taskBoxShadow: rgba(183, 178, 164, 0.25);
-  --taskDescriptionBlack: #1E1E1E;
+  --taskDescriptionBlack: #1e1e1e;
+  --modalInputBorder: #d9d9d9;
+  --submitButtonBG: #14ae5c;
+  --submitButtonBorder: #02542d;
 }
 
 body {
